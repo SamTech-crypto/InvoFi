@@ -1,0 +1,13 @@
+{
+  "name": "blockchain-supply-chain-finance",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "hardhat test",
+    "deploy": "hardhat run migrations/1_deploy_contracts.js"
+  },
+  "dependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@openzeppelin/contracts": "^4.9.0",
+    "dotenv": "^16.0.0"
+  }
+}
