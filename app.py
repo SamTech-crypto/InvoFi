@@ -3,7 +3,46 @@ import pandas as pd
 import json
 from datetime import datetime
 
-# Mock blockchain interaction (replace with Web3.py for real blockchain)
+# ----- Background & Button Styling -----
+st.markdown("""
+    <style>
+        .stApp {
+            background: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+            background-attachment: fixed;
+            background-size: cover;
+            color: #000000;
+        }
+
+        /* Glowing animated button */
+        .stButton > button {
+            color: white;
+            background-color: #0066cc;
+            border: none;
+            padding: 0.5em 1.2em;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 102, 204, 0.6);
+            transition: all 0.4s ease-in-out;
+            animation: glow 1.8s infinite alternate;
+        }
+
+        .stButton > button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 102, 204, 1);
+            cursor: pointer;
+        }
+
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 10px rgba(0, 102, 204, 0.6);
+            }
+            to {
+                box-shadow: 0 0 20px rgba(0, 102, 204, 1);
+            }
+        }
+    </style>
+""", unsafe_allow_html=True)
+
+# ----- Mock blockchain interaction -----
 class MockBlockchain:
     def __init__(self):
         self.invoices = []
@@ -28,10 +67,10 @@ class MockBlockchain:
                 return invoice
         return None
 
-# Initialize mock blockchain
+# ----- Initialize mock blockchain -----
 blockchain = MockBlockchain()
 
-# Streamlit app
+# ----- Streamlit App -----
 st.title("Blockchain Supply Chain Finance")
 
 # Create Invoice
